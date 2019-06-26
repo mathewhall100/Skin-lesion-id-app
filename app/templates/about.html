@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% set active_page = "about" %}
+
+{% block content %}
+
+    <div class='text-box'>
+        <p class='text-bold'>Introduction</p>
+        <p class='text'>Malignant melanoma is an aggressive form of skin cancer that metastasises early and causes by far the majority of deaths from skin cancer. Particularly in the eary stages, malignant melanoma often resembles other more benign and more frequent skin lesions such as melanocytic nevi (moles) making early recognition and diagnosis a challenge. As a general rule, melanoma are irregular, asymmetric and change over short periods of time, as opposed to benign nevi which are more rounded, symmetrical and don't change shape or grow in size rapidly. In many cases, however, even trained dermatologists cannot distinguish malignant from benign and consequently almost all worrisome skin lesions are biopsied, often excision biopsy, for definative diagnosis.
+        <br /><br />
+        Here we deploy an application using state of the art deep learning to binary classify images of malignant melanoma from benign nevi and we compare its performance to that of dermatologists and other machine learning/deep learning models.  </p>
+        <br />
+        <p class='text-bold'>Methods</p>
+        <p class='text'>Approximately 2000 images of malignant melanoma and 3000 of benign nevi were downloaded from the International Skin Imaging Collaboration (ISIC)  archive (https://www.isic-archive.com/#!/topWithHeader/wideContentTop/main). These were used to train a densenet169 convolutional (CNN) neural net architecture using the fastai v1 deep learning library. Performance of the trained network in binary classification of malignant from benign lesions was determined using a validation set comprising 20% of the total number of images. Performance metrics were AUC-ROC and accuracy.</p>
+        <br />
+        <p class='text-bold'>Results</p>
+        <p class='text'>The currently deployed model has an accuracy of 88.8% and AUC-ROC of xxx%. Analysis of a resulting confusion matrix shows that the model miss-classified malignant melanoma as benign nevus more frequently than the other way round. This model compares favourably with both dermatologists (which are reported to have around 65% accuracy) and other state of thr art models which range from around 70% to 90% accuracy depending on exact classification task.</p>
+        <br />
+        <p class='text-bold'>Disclaimer</p>
+        <p class='text'>This app is not approved or endorsed by any physician, hospital or medical authority and should not be used for medical diagnosis or advice. It has been developed and released purely as an experiment in the application of state of the art deep learning to a diffucult medical problem and as a demonstration of how deep learning and artificial intelligence may play a role in medicine and diagnostics in the future.</p>
+    </div>
+
+{% endblock %}

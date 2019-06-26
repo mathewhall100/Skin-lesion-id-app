@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% set active_page = "analyze" %}
+
+{% block content %}
+
+    <div class='text-box'>
+        <div class='terms-box'>
+            <h2 class='title'>Please Read and Agree Our Terms of Use</h2>
+            <p class='text'>I will not use this app for any form of medical diagnosis or advice.</p>
+            <form>
+                <table>
+                    <tbody>
+                        <tr> 
+                            <td style="width: 30px"><input id="termscheck" class='checkbox' type='checkbox' onclick='termsChecked()'></td>
+                            <td><span class='check-label'>I understand and agree to the terms of use</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+        <div id='btn-center' class='btn-center' style="pointer-events: none" >
+            <a href='/analyze'><button id='start-btn' class='start-btn' type='button'>Proceed</button></a>
+        </div>
+
+    </div>
+  
+{% endblock %}

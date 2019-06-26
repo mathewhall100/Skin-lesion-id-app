@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% set active_page = "analyze" %}
+
+{% block content %}
+
+    <div class='result-container'>
+        <p>Upload an image of a skin lesion <br />and we will predict whether it is benign or malignant.</p>
+        <br />
+        
+        <div class='no-display'>
+            <input id='file-input'
+                        class='no-display'
+                        type='file'
+                        name='file'
+                        accept='image/*'
+                        onchange='showPicked(this)'>
+        </div>
+        <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+        <span class='info-btn info'>&#9432;<span class='info-text'>Images can be uploaded from any device and ideally should be well focused with the lesion covering 25-50% of the image field. </span></span>
+        
+        <div class='upload-label'>
+            <label id='upload-label'>No file chosen</label>
+        </div>
+        <div >
+            <img id='image-picked' class='no-display' alt='Chosen Image' height='200' width='auto'>
+        </div>
+        <div id='analyze' class='analyze' style="display:none" >
+            <button  id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze Image</button>
+        </div>
+        <div id='result' class='result-label' style="display:none" >
+            <span style="font-size: 18px">Prediction: </span><label id='result-label'></label>
+        </div>
+    </div>
+
+{% endblock %}

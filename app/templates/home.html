@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% set active_page = "home" %}
+
+{% block content %}
+
+    <div class='text-box'>
+        <!-- <h2 class='title'>Skin Lesion Identification</h2> -->
+        <p class='text'>This is an experimental application designed to classify images of skin lesions as either showing a benign nevus (mole) or a malignant melanoma. The application has an accuracy of around 88% in correctly classifying skin lesions as benign or malignant and is the subject of ongoing research and development.</p>
+        <p class='text'>Please note tht this app is purely for demonstration and experiment and is not intended or designed to provide any form of medical diagnosis or advice. If you are concerned about a skin lesion, it should be reviewed by a qualified doctor as soon as possible and no guidance whatsoever should be taken from this app.</p>
+
+        <div class='terms-box'>
+            <h2 class='title'>Terms of Use</h2>
+            <p class='text'>I will NOT use this app for any form of medical diagnosis or advice.</p>
+            <form>
+                <table>
+                    <tbody>
+                        <tr> 
+                            <td style="width: 30px"><input id="termscheck" class='checkbox' type='checkbox' onclick='termsChecked()'></td>
+                            <td><span class='check-label'>I understand and agree to the terms of use</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+        <div id='btn-center' class='btn-center' style="pointer-events: none" >
+            <a href='/analyze'><button id='start-btn' class='start-btn' type='button'>Get started</button></a>
+        </div>
+
+    </div>
+{% endblock %}
+

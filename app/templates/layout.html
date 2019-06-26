@@ -1,0 +1,51 @@
+{% set navigation_bar = [
+	('/', 'home', 'Home'),
+	('/analyze', 'analyze', 'Analyze'), 
+	('/about', 'about', 'About')
+ ] -%}
+{% set active_page = active_page|default('/' ) -%}
+
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset='utf-8'>
+        <title>Skin lesion ID app</title>
+        <link rel='stylesheet' type='text/css' href='../static/style.css' >
+		<script src='../static/client.js'></script>
+	</head>
+
+	<body>
+		<div class='content'>
+			<div class='container'>
+
+				<div class='banner-text'>
+					<div class='banner-title'>Skin Lesion<br />Identification</div>
+					<div class='banner-subtitle'>Powered by deep learning</div>
+				</div>
+				<div class='crop-container'>
+					<img src="https://www.hivplusmag.com/sites/hivplusmag.com/files/2018/07/19/melanoma-750x.jpg" width="100%" height="auto" alt="lesion under inspection">
+				</div>
+
+				<ul id="navigation" class="topnav">
+					{% for href, id, caption in navigation_bar %}
+						<li
+						 {% if id == active_page %} style="background-color: purple" {% endif %}
+						 {% if id == "about" %} class='right' {% endif %}
+						 >
+							<a href="{{ href|e }}">{{ caption|e }}</a>
+						</li>
+						{% endfor %}
+				</ul>
+
+                {% block content %}{% endblock %}
+
+			</div>
+		</div>
+
+		<footer class="footer">
+			<p><span style="font-size: 20px">&copy;</span> All rights reserved, 2019 &nbsp;&nbsp;<span style="font-size: 20px">|</span> &nbsp;&nbsp;Not for medical use.</p>
+		</footer>
+	
+	</body>
+</html>
